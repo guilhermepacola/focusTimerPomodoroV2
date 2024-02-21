@@ -16,6 +16,7 @@
     --bg-button-primary: hsla(var(--hue), 9%, 89%, 1);
     --bg-button-secondary: hsla(var(--hue), 97%, 31%, 1);
     --primary-color: hsla(var(--hue), 6%, 21%, 1);
+    
 
 }
 
@@ -90,6 +91,50 @@ body {
 #sounds button:hover path {
     fill: var(--bg-primary-color-white);
 }
+
+.volume {
+    appearance: none;
+    width: 9rem;
+    height: .4rem;
+    
+    border-radius: 5px;
+  
+    transition: all 0.25s;
+  }
+  
+  .volume::-webkit-slider-thumb {
+    appearance: none;
+  
+    width: 1.6rem;
+    height: 1.6rem;
+  
+    border-radius: 9999rem;
+  
+    transition: all 0.25s;
+  }
+  
+  .clicked .volume,
+  .sounds:hover .volume {
+    background: white;
+  } 
+  
+  .clicked .volume::-webkit-slider-thumb,
+  .sounds:hover .volume::-webkit-slider-thumb {
+    background: white;
+    cursor: pointer;
+  } 
+
+  .card {
+    transition: background 0.5s ease;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  
+    justify-content: center;
+    align-items: center;
+  }
+  
 
 .running .ph-play-circle,
 .running .ph-timer,

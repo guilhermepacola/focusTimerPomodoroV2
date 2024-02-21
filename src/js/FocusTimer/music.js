@@ -15,7 +15,6 @@ export function toggleFlorestMusic() {
     if (selected) {
         florestSound.pause()
     }
-
     florest.classList.toggle('clicked')
 }
 
@@ -29,7 +28,6 @@ export function toggleRainMusic() {
     if (selected) {
         rainingSound.pause()
     }
-
     raining.classList.toggle('clicked')
 }
 
@@ -44,7 +42,6 @@ export function toggleCoffeeShopMusic() {
     if (selected) {
         coffeeShopSound.pause()
     }
-
     coffeeShop.classList.toggle('clicked')
 }
 
@@ -58,7 +55,6 @@ export function toggleCampFireMusic() {
     if (selected) {
         campFireSound.pause()
     }
-
     campFire.classList.toggle('clicked')
 
 }

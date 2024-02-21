@@ -16,8 +16,6 @@ export function setTimer() {
 el.minutes.setAttribute('contenteditable', true)
 el.minutes.focus()
 sounds.buttonPressAudio.play()
-
-
 }
 
 export function stopTimer() {
@@ -25,4 +23,26 @@ export function stopTimer() {
     state.isRunning = document.documentElement.classList.remove('running')
     timer.updateDisplay()
     sounds.stopTimer.play()
+}
+
+export function toggleAddMinutes() {
+    sounds.buttonPressAudio.play()
+    let currentMinutes = state.minutes || 0;
+    currentMinutes += 5;
+    if (currentMinutes > 60) {
+        currentMinutes = 60;
+    }
+    state.minutes = currentMinutes;
+    timer.updateDisplay(); 
+}
+
+export function toggleRemoveMinutes() {
+    sounds.buttonPressAudio.play()
+    let currentMinutes = state.minutes || 0;
+    currentMinutes -= 5;
+    if (currentMinutes < 0) {
+        currentMinutes = 0;
+    }
+    state.minutes = currentMinutes;
+    timer.updateDisplay();
 }
