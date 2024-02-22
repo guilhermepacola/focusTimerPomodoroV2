@@ -6,27 +6,25 @@ import * as sounds from "./sounds.js"
 
 export function toggleRunning() {
     state.isRunning = document.documentElement.classList.toggle('running')
-    timer.countdown()
-    sounds.buttonPressAudio.play()
-
-
+    timer.countdown();
+    sounds.buttonPressAudio.play();
 }
 
 export function setTimer() {
 el.minutes.setAttribute('contenteditable', true)
-el.minutes.focus()
-sounds.buttonPressAudio.play()
+el.minutes.focus();
+sounds.buttonPressAudio.play();
 }
 
 export function stopTimer() {
-    state.isRunning = false
-    state.isRunning = document.documentElement.classList.remove('running')
-    timer.updateDisplay()
-    sounds.stopTimer.play()
+    state.isRunning = false;
+    state.isRunning = document.documentElement.classList.remove('running');
+    timer.updateDisplay();
+    sounds.stopTimer.play();
 }
 
 export function toggleAddMinutes() {
-    sounds.buttonPressAudio.play()
+    sounds.buttonPressAudio.play();
     let currentMinutes = state.minutes || 0;
     currentMinutes += 5;
     if (currentMinutes > 60) {
