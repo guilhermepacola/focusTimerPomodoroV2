@@ -12,7 +12,7 @@
 
     /* Colors */
     --hue: 194;
-    --bg-primary-color-white: hsla(var(--hue), 0%, 100%, 1);
+    --bg-primary-color: hsla(var(--hue), 0%, 100%, 1);
     --bg-button-primary: hsla(var(--hue), 9%, 89%, 1);
     --bg-button-secondary: hsla(var(--hue), 97%, 31%, 1);
     --primary-color: hsla(var(--hue), 6%, 21%, 1);
@@ -20,9 +20,49 @@
 
 }
 
+
+html.light {
+    --bg-primary-color: hsla(var(--hue), 0%, 0%, 1);
+    --primary-color: hsla(var(--hue), 0%, 100%, 1);
+    
+
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+    display: none;
+}
+
+#toggle-light-mode {
+    position: absolute;
+    top: 3.2rem;
+    right: 3.2rem;
+
+    line-height: 0;
+    background: transparent;
+    border: 0;
+
+    color: var(--primary-color);
+    font-size: 3.2rem;
+    cursor: pointer;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    
+    padding: 0;
+    margin: -1px;
+    border-width: 0;
+    
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
 body,
-button,
-i {
+button {
     color: var(--primary-color);
 }
 
@@ -33,9 +73,11 @@ body {
     height: 100vh;
     place-content: center;
 
-    background: var(--bg-primary-color-white);
+    background: var(--bg-primary-color);
 
 }
+
+
 
 #app {
     display: flex;
@@ -61,6 +103,10 @@ body {
     background: transparent;
 }
 
+#controls button:hover{
+    color: var(--bg-button-secondary);
+}
+
 #sounds {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -81,7 +127,7 @@ body {
 }
 
 .clicked path {
-    fill: var(--bg-primary-color-white);
+    fill: var(--bg-button-primary);
 }
 
 #sounds button:hover {
@@ -89,7 +135,7 @@ body {
 }
 
 #sounds button:hover path {
-    fill: var(--bg-primary-color-white);
+    fill: var(--bg-button-primary);
 }
 
 .volume {

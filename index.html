@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="">
 
 <head>
 
@@ -21,11 +21,19 @@
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="./src/js/toggle-light-mode.js" defer></script>
     <script type="module" src="./src/js/main.js" defer></script>
 </head>
 
 <body>
     <div id="app">
+
+        <button id="toggle-light-mode">
+            <span class="sr-only">Alterar Light Mode</span>
+            <i class="ph-bold ph-sun"></i>
+            <i class="ph-bold ph-moon"></i>
+        </button>
+
         <section id="timer">
             <span id="minutes">00</span>
             <span>:</span>
